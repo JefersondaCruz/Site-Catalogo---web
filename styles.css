@@ -7,7 +7,9 @@
 
 .main-content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 /*  Cabeçalho  */
@@ -15,11 +17,11 @@
 
 .navbar-cabeçalho {
     display: flex;
+    max-width: 100%;
     justify-content: flex-end;
     background-color: #173B45;
     border-bottom: 1px solid rgba(0, 0, 0, 0.288);
     height: 80px;
-    width: 100%;
     color: #FFf;
     
 }
@@ -104,6 +106,7 @@
     flex: 3;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .filtros-main ul {
@@ -145,6 +148,7 @@
 .pesq{
     padding: 5px;
     border: none;
+    outline: none;
 }
 
 .pesq:hover {
@@ -205,8 +209,12 @@ aside ul li {
 /* Card de Produtos   */
 
 .produto {
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px; 
   
     
     text-align: center;
@@ -218,21 +226,24 @@ aside ul li {
 }
 
 .card {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 200px;
-    margin: 25px;
+    margin: 15px;
     border: 1px solid rgba(44, 43, 43, 0.3);
     padding: 10px;
     border-radius: 15px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .card-image {
-    height: 200px;
-    background-size: cover;
-    padding: 100px;
-    box-sizing: border-box;
-    background-position: center;
-
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
 }
 
 .card-description .box-parcelar {
@@ -246,45 +257,6 @@ aside ul li {
     justify-content: flex-start;
 }
 
-.card-5, .card-6 {
-    width: 400px;
-}
-
-.card-1 .card-image {
-    background-image: url(img/tenis1.jpg);
-
-}
-
-.card-2 .card-image {
-    background-image: url(img/adidas1.png);
-}
-
-.card-3 .card-image {
-    background-image: url(img/NB2.jpg);
-}
-
-.card-4 .card-image {
-    background-image: url(img/nike2.jpg);
-    
-    
-}
-
-.card-5 .card-image {
-    background-image: url(img/jordan.jpg);
-}
-
-.card-6 .card-image {
-    background-image: url(img/air.jpg);
-    
-}
-
- /* .card-7 .card-image {
-    background-image: url(img/tenis1.jpg);
-}
-
-.card-8 .card-image {
-    background-image: url(img/tenis1.jpg);
-} */
 
 .produto p {
     /*font-family: "New Amsterdam", sans-serif; */
@@ -299,6 +271,7 @@ aside ul li {
     font-family: "Roboto";
     font-weight: 500;
     padding-top: 5px;
+    font-size: 20px;
 }
 
 .card-description {
@@ -357,4 +330,262 @@ footer ul li {
     display: flex;
     flex-direction: row;
     gap: 5px;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 31%;
+    }
+
+    aside {
+        display: none;
+    }
+    .pesq {
+        flex: 1;
+        padding: 10px;
+        margin-right: 0; 
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .btn button {
+        padding: 10px 20px; 
+        font-size: 16px; 
+    }
+    
+    .btn button i {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Ajustes para tablets e acima */
+    .navbar-cabeçalho {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    
+
+    #menu {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .main-content {
+        flex-direction: row;
+    }
+
+    .filter {
+        width: 25%;
+        margin-left: 2em;
+    }
+
+    .produto {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .pesq {
+        flex: 1;
+        padding: 10px;
+        margin-right: 0; 
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .btn button {
+        padding: 10px 20px; 
+        font-size: 16px; 
+    }
+    
+    .btn button i {
+        font-size: 20px;
+    }
+   
+
+    footer {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px){
+    .navbar-cabeçalho {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+        
+    }
+
+    aside {
+        display: none;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .mainreserch {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .produto {
+        max-width: 100%;
+        flex-direction: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social ul {
+        justify-content: center;
+    }
+
+    .filtros-main ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filtros-main li {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .pesq {
+        flex: 1;
+        padding: 10px;
+        margin-right: 0; 
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .btn button {
+        padding: 10px 20px; 
+        font-size: 16px; 
+    }
+    
+    .btn button i {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #logo {
+        font-size: 50px;
+    }
+
+    .navbar-cabeçalho {
+        padding: 10px;
+    }
+
+    
+    .produto {
+        flex-direction: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    aside {
+        display: none;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    .footer-social ul {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+
+    }
+
+    .pesq {
+        flex: 1;
+        padding: 10px;
+        margin-right: 0; 
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .btn button {
+        padding: 10px 20px; 
+        font-size: 16px; 
+    }
+    
+    .btn button i {
+        font-size: 20px;
+    }
+
+    .btn-footer {
+        display: block;
+        margin: 0px auto;
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+
+   footer {
+    line-height:25px;
+   }
 }
